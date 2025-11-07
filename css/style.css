@@ -1,0 +1,347 @@
+:root {
+  --bg: #ffffff;
+  --accent: #5CCDBB;
+  --text-dark: #242D4E;
+  --text-light: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* --- Navbar --- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: linear-gradient(90deg, var(--text-dark) 0%, var(--accent) 100%);
+  color: var(--text-light);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--text-light);
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tab {
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.tab.active {
+  background: var(--accent);
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* --- Hero Section --- */
+.home-hero {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 0.3px);
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(85%);
+}
+
+.hero-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(36, 45, 78, 0.65);
+  color: var(--text-light);
+  padding: 24px 36px;
+  border-radius: 12px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
+.hero-caption h1 {
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* --- Judul Section --- */
+.about-container h3,
+.energy-text h3,
+.benefit-section h3,
+.dashboard-button-container h3,
+.video-section h3 {
+  color: var(--text-dark);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.about-container h3::after,
+.energy-text h3::after,
+.benefit-section h3::after,
+.dashboard-button-container h3::after,
+.video-section h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* --- Rata kiri khusus About & Piezoelectric --- */
+.about-container h3,
+.energy-text h3 {
+  text-align: left;
+}
+
+.about-container h3::after,
+.energy-text h3::after {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* --- Paragraf Default --- */
+p {
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* --- About Section --- */
+.about-section {
+  padding: 80px 10px 20px;
+  background: #ffffff;
+}
+
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 50px;
+}
+
+.text-container {
+  flex: 1;
+}
+
+.image-right {
+  display: flex;
+  flex-direction: row; /* horizontal: main-image kiri, SDGs kanan */
+  align-items: flex-start;
+  gap: 20px; /* jarak antara gambar utama dan SDGs */
+}
+
+/* Gambar utama Piezo2 */
+.main-image img {
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.img-source {
+  font-size: 0.8rem;
+  color: #666;
+  text-align: center;
+  margin-top: 6px;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Collage SDGs vertikal di kanan */
+.side-collage-vertical {
+  display: flex;
+  flex-direction: column; /* vertikal */
+  gap: 10px;
+}
+
+/* Ukuran gambar SDGs */
+.small-img-vertical {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .image-right {
+    flex-direction: column; /* stacking untuk mobile */
+    align-items: center;
+  }
+
+  .side-collage-vertical {
+    flex-direction: row; /* horizontal di mobile */
+    gap: 10px;
+  }
+
+  .small-img-vertical {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+
+/* --- Energi Piezoelectric --- */
+.energy-section {
+  padding: 20px 10px;
+  background: #ffffff;
+}
+
+.energy-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.energy-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.energy-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+}
+
+.energy-text {
+  flex: 1.3;
+}
+
+/* --- Video Section --- */
+.video-section {
+  background: #ffffff;
+  padding: 40px 10px;
+  text-align: center;
+}
+
+.video-section p {
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+/* --- Benefit Section --- */
+.text-accent {
+  color: var(--accent);
+}
+
+.benefit-section {
+  padding: 20px 10px 40px;
+  background: #ffffff;
+}
+
+.benefit-section .row {
+  padding: 0 10px;
+}
+
+.benefit-section .card {
+  background: #E6F7F3;
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+}
+
+.benefit-section .card-body {
+  padding: 20px;
+}
+
+/* --- Dashboard Section --- */
+.dashboard-section {
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.dashboard-container {
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+}
+
+.dashboard-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* --- Tombol --- */
+.btn-accent {
+  background: var(--accent);
+  color: var(--text-dark);
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.btn-accent:hover {
+  transform: scale(1.05);
+}
+
+/* --- Footer --- */
+footer {
+  background: linear-gradient(90deg, var(--accent) 0%, var(--text-dark) 100%);
+  color: var(--text-light);
+  font-weight: 500;
+  text-align: center;
+  padding: 16px 0;
+}
+.footer-text {
+  display: block;
+  margin-bottom: 4px; /* jarak antar teks */
+}
+
