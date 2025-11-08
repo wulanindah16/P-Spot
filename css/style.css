@@ -72,6 +72,12 @@ body {
   background: #ffffff;
 }
 
+.hero-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .hero-image img {
   width: 100%;
   height: 100%;
@@ -91,12 +97,31 @@ body {
   border-radius: 12px;
   text-align: center;
   backdrop-filter: blur(6px);
+  z-index: 5;
 }
 
 .hero-caption h1 {
   color: var(--accent);
   font-weight: 700;
   margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .home-hero {
+    position: relative;
+  }
+
+  .hero-image {
+    position: relative;
+  }
+
+  .hero-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
 }
 
 /* --- Judul Section --- */
@@ -126,7 +151,6 @@ body {
   border-radius: 2px;
 }
 
-/* --- Rata kiri khusus About & Piezoelectric --- */
 .about-container h3,
 .energy-text h3 {
   text-align: left;
@@ -167,12 +191,11 @@ p {
 
 .image-right {
   display: flex;
-  flex-direction: row; /* horizontal: main-image kiri, SDGs kanan */
+  flex-direction: row; 
   align-items: flex-start;
-  gap: 20px; /* jarak antara gambar utama dan SDGs */
+  gap: 20px; 
 }
 
-/* Gambar utama Piezo2 */
 .main-image img {
   width: 350px;
   height: 300px;
@@ -193,7 +216,7 @@ p {
 /* Collage SDGs vertikal di kanan */
 .side-collage-vertical {
   display: flex;
-  flex-direction: column; /* vertikal */
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -209,12 +232,12 @@ p {
 /* Responsive */
 @media (max-width: 992px) {
   .image-right {
-    flex-direction: column; /* stacking untuk mobile */
+    flex-direction: column; 
     align-items: center;
   }
 
   .side-collage-vertical {
-    flex-direction: row; /* horizontal di mobile */
+    flex-direction: row; 
     gap: 10px;
   }
 
@@ -342,6 +365,6 @@ footer {
 }
 .footer-text {
   display: block;
-  margin-bottom: 4px; /* jarak antar teks */
+  margin-bottom: 4px; 
 }
 
